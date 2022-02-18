@@ -6,7 +6,7 @@
 /*   By: letumany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:55:17 by letumany          #+#    #+#             */
-/*   Updated: 2022/02/18 21:32:54 by letumany         ###   ########.fr       */
+/*   Updated: 2022/02/19 01:12:51 by letumany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,9 @@ static	void	start_philo(t_data *data)
 	while (++i < data->count_philo)
 		pthread_create(&data->array_philo[i].thread,
 			NULL, philo, (void *)&data->array_philo[i]);
-	pthread_join(god, NULL);
+	i = -1;
 	pthread_mutex_destroy(&data->sms);
+	pthread_join(god, NULL);
 }
 
 int	main(int argc, char **argv)

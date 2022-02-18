@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine.c                                          :+:      :+:    :+:   */
+/*   izanami.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: letumany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:25:49 by letumany          #+#    #+#             */
-/*   Updated: 2022/02/18 22:14:45 by letumany         ###   ########.fr       */
+/*   Updated: 2022/02/19 00:33:21 by letumany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	take_fork(t_philo *philo)
 {
 	if (philo->index % 2 == 0)
 	{
+		if (philo->index == 0)
+			usleep(100);
 		pthread_mutex_lock(philo->rfork);
 		pthread_mutex_lock(philo->sms);
 		printf("%zu %d has taken a fork\n",

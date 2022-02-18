@@ -6,7 +6,7 @@
 #    By: letumany <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 19:11:25 by letumany          #+#    #+#              #
-#    Updated: 2022/02/18 21:57:54 by letumany         ###   ########.fr        #
+#    Updated: 2022/02/19 01:00:32 by letumany         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ DIR_SRCS	=	./srcs/
 DIR_OBJS	=	./compiled_srcs/
 
 SRC			=	philo.c init.c time.c\
-				routine.c utils.c	
+				izanami.c utils.c	
 
 SRCS		=	$(SRC)
 
@@ -40,15 +40,12 @@ $(NAME):		$(OBJS)
 
 $(OBJS):		$(DIR_OBJS)
 
+$(DIR_OBJS):
+				@mkdir $@
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
-				@tput setaf 190 && printf "\033[2K\r Compiling $< ⌛ "
+				@tput setaf 190 && printf "\033[2K\r Compiling $<"
 				@$(CC) $(CC_FLAGS) -I $(DIR_HEADERS) -c $< -o $@
-
-$(DIR_OBJS):
-				@mkdir $(DIR_OBJS)
-				
-.PHONY:			all clean fclean re norm
 
 clean:
 				@$(RM) $(DIR_OBJS)
@@ -59,3 +56,5 @@ fclean:			clean
 				@tput setaf 928 && printf ""$(NAME)" deleted.\n"
 
 re:				fclean all
+
+.PHONY:			all clean fclean re norm
