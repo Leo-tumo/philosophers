@@ -3,7 +3,7 @@ I’ve never thought philosophy would be so deadly.
 ## ΟΙ ΓΕΥΜΑΤΙΖΟΝΤΕΣ ΦΙΛΟΣΟΦΟΙ
 ![](https://github.com/hanshazairi/42-minitalk/workflows/norminette/badge.svg)
 
-[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/alesanto/Philosophers)](https://github.com/JaeSeoKim/badge42)
+![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/letumany/minitalk)
 #### `source` - [wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
 
 ![image](https://user-images.githubusercontent.com/73405731/153401286-ef7133b2-918c-4b5a-9d44-1df5e321f542.png)
@@ -28,7 +28,7 @@ it dies.
   - time_to_eat: is in milliseconds and is the time it takes for a philosopher to eat. During that time they will need to keep the two forks.
   - time_to_sleep: is in milliseconds and is the time the philosopher will spend sleeping.
   - number_of_times_each_philosopher_must_eat: argument is optional, if all philosophers eat at least ’number_of_times_each_philosopher_must_eat’ the simulation will stop. If not specified, the simulation will stop only at the death of a philosopher.
-  - 
+ 
 ### Rules
 
 | Rule         |                 Description                             |
@@ -38,8 +38,4 @@ it dies.
 | `make fclean`| Do `clean` rule and remove the executable program       |
 | `make re`    | Do `fclean` rule and compile the program                |
 
-### Useful links
-
-[youtube](https://youtu.be/d9s_d28yJq0)
-
-[youtube](https://youtu.be/uA8X5zNOGw8)
+#### Useful links ➤ [link1](https://youtu.be/d9s_d28yJq0)  [link2](https://youtu.be/uA8X5zNOGw8)
