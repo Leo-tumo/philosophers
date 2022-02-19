@@ -1,8 +1,7 @@
-# philosophers 42
-I’ve never thought philosophy would be so deadly.
-## ΟΙ ΓΕΥΜΑΤΙΖΟΝΤΕΣ ΦΙΛΟΣΟΦΟΙ
-![](https://github.com/hanshazairi/42-minitalk/workflows/norminette/badge.svg)
+# ΟΙ ΓΕΥΜΑΤΙΖΟΝΤΕΣ ΦΙΛΟΣΟΦΟΙ – *philosophers 42*
+### **`I’ve never thought philosophy would be so deadly.`**
 
+![](https://github.com/hanshazairi/42-minitalk/workflows/norminette/badge.svg) 
 ![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/letumany/minitalk)
 #### `source` - [wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
 
