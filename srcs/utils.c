@@ -6,7 +6,7 @@
 /*   By: letumany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:36:36 by letumany          #+#    #+#             */
-/*   Updated: 2022/02/18 23:14:21 by letumany         ###   ########.fr       */
+/*   Updated: 2022/02/19 12:49:34 by letumany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_error(char *s)
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int num;
+	int	i;
+	int	num;
 
 	i = 0;
 	num = 0;

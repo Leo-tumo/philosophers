@@ -6,7 +6,7 @@
 /*   By: letumany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:55:17 by letumany          #+#    #+#             */
-/*   Updated: 2022/02/19 01:12:51 by letumany         ###   ########.fr       */
+/*   Updated: 2022/02/19 12:49:08 by letumany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ static	void	*philo(void	*philo_tmp)
 	philo->fed = get_time(0);
 	while (1)
 	{
+		if (philo->must_eat == 0)
+		{
+			pthread_join(philo->thread, NULL);
+			break ;
+		}
 		take_fork(philo);
 		eating(philo);
 		put_fork(philo);
@@ -30,16 +35,23 @@ static	void	*philo(void	*philo_tmp)
 		}
 		sleeping_thinking(philo);
 	}
+	pthread_mutex_destroy(philo->lfork);
+	pthread_mutex_destroy(philo->rfork);
+	free(philo);
 	return (NULL);
 }
 
 static	int	check_for_death(t_data *data, int *eat_check, int *i)
 {
+	int	j;
+
 	if (data->time_to_die < get_time(data->array_philo[*i].fed))
 	{
 		pthread_mutex_lock(&data->sms);
 		printf("%zu %d died\n",
 			get_time(data->array_philo[*i].begin_time), *i + 1);
+		free(data->array_philo);
+		j = 0;
 		return (1);
 	}
 	if (data->array_philo[*i].must_eat == 0)
@@ -47,7 +59,7 @@ static	int	check_for_death(t_data *data, int *eat_check, int *i)
 	return (0);
 }
 
-static	void	*control(void *date_tmp)
+static	void	*death_note(void *date_tmp)
 {
 	int		i;
 	int		eat_check;
@@ -75,16 +87,16 @@ static	void	*control(void *date_tmp)
 static	void	start_philo(t_data *data)
 {
 	int				i;
-	pthread_t		god;
+	pthread_t		ryuk;
 
 	i = -1;
-	pthread_create(&god, NULL, control, (void *)data);
+	pthread_create(&ryuk, NULL, death_note, (void *)data);
 	while (++i < data->count_philo)
 		pthread_create(&data->array_philo[i].thread,
 			NULL, philo, (void *)&data->array_philo[i]);
 	i = -1;
 	pthread_mutex_destroy(&data->sms);
-	pthread_join(god, NULL);
+	pthread_join(ryuk, NULL);
 }
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 #    By: letumany <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 19:11:25 by letumany          #+#    #+#              #
-#    Updated: 2022/02/19 01:00:32 by letumany         ###   ########.fr        #
+#    Updated: 2022/02/19 12:43:22 by letumany         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,12 @@ $(NAME):		$(OBJS)
 
 $(OBJS):		$(DIR_OBJS)
 
-$(DIR_OBJS):
-				@mkdir $@
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 				@tput setaf 190 && printf "\033[2K\r Compiling $<"
 				@$(CC) $(CC_FLAGS) -I $(DIR_HEADERS) -c $< -o $@
+$(DIR_OBJS):
+				@mkdir $@
 
 clean:
 				@$(RM) $(DIR_OBJS)
