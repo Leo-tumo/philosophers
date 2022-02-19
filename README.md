@@ -2,7 +2,7 @@
 ### **`I’ve never thought philosophy would be so deadly.`**
 
 ![](https://github.com/hanshazairi/42-minitalk/workflows/norminette/badge.svg) 
-![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/letumany/minitalk)
+![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/letumany/Philosophers)
 #### `source` - [wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
 
 ![image](https://user-images.githubusercontent.com/73405731/153401286-ef7133b2-918c-4b5a-9d44-1df5e321f542.png)
