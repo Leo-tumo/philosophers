@@ -6,7 +6,7 @@
 /*   By: letumany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:55:17 by letumany          #+#    #+#             */
-/*   Updated: 2022/02/19 12:49:08 by letumany         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:57:41 by letumany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ static	void	*philo(void	*philo_tmp)
 		}
 		sleeping_thinking(philo);
 	}
-	pthread_mutex_destroy(philo->lfork);
-	pthread_mutex_destroy(philo->rfork);
-	free(philo);
 	return (NULL);
 }
 
